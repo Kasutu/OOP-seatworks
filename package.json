@@ -1,23 +1,23 @@
 {
-  "name": "oop-seatworks",
-  "version": "1.0.0",
-  "description": "OOP data structure demo for SE2 class",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "go": "tsc index.ts && node ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Kasutu/OOP-seatworks.git"
-  },
-  "keywords": [
-    "oop"
-  ],
-  "author": "Jerome Cabugwason",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Kasutu/OOP-seatworks/issues"
-  },
-  "homepage": "https://github.com/Kasutu/OOP-seatworks#readme"
+	"name": "oop-seatworks",
+	"version": "1.0.0",
+	"description": "OOP data structure demo for SE2 class",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "npx ts-node index.ts"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Kasutu/OOP-seatworks.git"
+	},
+	"keywords": [
+		"oop"
+	],
+	"author": "Jerome Cabugwason",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Kasutu/OOP-seatworks/issues"
+	},
+	"homepage": "https://github.com/Kasutu/OOP-seatworks#readme"
 }

@@ -50,10 +50,10 @@ var human = /** @class */ (function () {
         // drink only when sitting
         console.log("".concat(this.name, " drank ").concat(bottles, " of beer while ").concat(this.isDoing));
     };
-    human.prototype.watchTv = function () {
+    human.prototype.watch = function (movie) {
         // when sitting or standing
         this.isSitting = true;
-        this.isDoing = 'watching tv';
+        this.isDoing = "watching ".concat(movie);
         console.log("".concat(this.name, " started watching tv"));
     };
     human.prototype.doSomeCoding = function () {
@@ -82,7 +82,7 @@ Based on the class that you have created on the previous exercises, please imple
 Create a parent class or set your class as a parent class.
 Have a child class which will inherit 5 attributes and 5 methods
 from your parent class.
-s
+
 
 2. Abstraction
 Create an interface for your parent class (based on item 1) and
@@ -97,8 +97,36 @@ var classmate = /** @class */ (function (_super) {
         _this.cutenessLevel = cuteness;
         return _this;
     }
-    classmate.prototype.giveAnswer = function (name) {
-        console.log("".concat(this.name, " gave answers to ").concat(name));
+    classmate.prototype.chill = function () {
+        var person = {
+            bedColor: 'white',
+            game: 'valo',
+            rank: 'predator',
+            isSmiling: true,
+            havingCoffee: true,
+            sleep: function () {
+                return 'sleeping';
+            },
+            play: function () {
+                return "playing ".concat(this.game);
+            },
+            isHappy: function () {
+                return true;
+            }
+        };
+        return person;
+    };
+    classmate.prototype.attributes = function () {
+        console.log([
+            this.name,
+            this.tummy,
+            this.isDoing,
+            this.isSitting,
+            this.isStanding,
+            this.gCashLoad,
+            this.walletStatus,
+            this.shirtColor,
+        ]);
     };
     return classmate;
 }(human));
@@ -107,5 +135,10 @@ function run() {
     gem.eat('Ice cream');
     gem.loadGcash(100000000);
     gem.shirtForToday();
+    gem.watch('aot');
+    gem.detectedByDog('spark', 'licking');
+    gem.useWallet(9999999, 'added');
+    gem.attributes();
+    gem.chill();
 }
 run();

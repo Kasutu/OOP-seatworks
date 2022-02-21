@@ -1,4 +1,16 @@
-class human {
+interface Chill {
+	bedColor: string;
+	game: string;
+	rank: string;
+	isSmiling: boolean;
+	havingCoffee: boolean;
+
+	sleep(): string;
+	play(): string;
+	isHappy(): boolean;
+}
+
+abstract class human {
 	name: string;
 	tummy: string;
 	isDoing: string;
@@ -57,10 +69,10 @@ class human {
 		console.log(`${this.name} drank ${bottles} of beer while ${this.isDoing}`);
 	}
 
-	watchTv(): void {
+	watch(movie: string): void {
 		// when sitting or standing
 		this.isSitting = true;
-		this.isDoing = 'watching tv';
+		this.isDoing = `watching ${movie}`;
 		console.log(`${this.name} started watching tv`);
 	}
 
@@ -84,6 +96,8 @@ class human {
 		this.isDoing = `being ${isGonna} by ${dogName}, a dog`;
 		console.log(`${dogName} is ${isGonna} ${this.name}`);
 	}
+
+	abstract chill(): Chill;
 }
 
 /*
@@ -92,7 +106,7 @@ Based on the class that you have created on the previous exercises, please imple
 Create a parent class or set your class as a parent class. 
 Have a child class which will inherit 5 attributes and 5 methods 
 from your parent class.
-s
+
 
 2. Abstraction
 Create an interface for your parent class (based on item 1) and 
@@ -109,8 +123,39 @@ class classmate extends human {
 		this.cutenessLevel = cuteness;
 	}
 
-	giveAnswer(name: string) {
-		console.log(`${this.name} gave answers to ${name}`);
+	public chill(): Chill {
+		const person = {
+			bedColor: 'white',
+			game: 'valo',
+			rank: 'predator',
+			isSmiling: true,
+			havingCoffee: true,
+
+			sleep() {
+				return 'sleeping';
+			},
+			play() {
+				return `playing ${this.game}`;
+			},
+			isHappy() {
+				return true;
+			},
+		};
+
+		return person;
+	}
+
+	attributes(): void {
+		console.log([
+			this.name,
+			this.tummy,
+			this.isDoing,
+			this.isSitting,
+			this.isStanding,
+			this.gCashLoad,
+			this.walletStatus,
+			this.shirtColor,
+		]);
 	}
 }
 
@@ -120,6 +165,10 @@ function run(): void {
 	gem.eat('Ice cream');
 	gem.loadGcash(100000000);
 	gem.shirtForToday();
+	gem.watch('aot');
+	gem.detectedByDog('spark', 'licking');
+	gem.useWallet(9999999, 'added');
+	gem.attributes();
 }
 
 run();
